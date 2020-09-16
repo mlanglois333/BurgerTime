@@ -2,11 +2,12 @@ var connection = require("../config/connection.js");
 
 var orm = {
 
-    all: function(table, burg){
+    all: function(table, cb){
         var qu= "SELECT * FROM " + table + ";";
         connection.query(qu, function(err, result){
-            if (err) throw err;
-            burg(result);
+            if (err) {throw err};
+            console.log("result")
+            cb(result);
         });
     },
 
