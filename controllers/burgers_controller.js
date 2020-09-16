@@ -5,7 +5,8 @@ var router = express.Router();
 
 router.get("/", function(req, res){
     burger.all(function(data){
-        var dataObj = {burger:data};
+        console.log("get request");
+        var dataObj = {burgers:data};
         res.render("index", dataObj);
     });
 });
