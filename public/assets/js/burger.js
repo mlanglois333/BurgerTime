@@ -17,7 +17,7 @@ $(function(){
     $(".create-form").on("submit", function(event){
         event.preventDefault();
         const burgs = {
-            burger_name: $("#burg").val(),
+            burger_name: $("#name").val(),
             devoured: $("[name=devoured]:checked").val()
         };
 

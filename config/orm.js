@@ -2,21 +2,21 @@ var connection = require("../config/connection.js");
 
 var orm = {
 
-    all: function(table, cb){
+    all: function(table, burg){
         var qu= "SELECT * FROM " + table + ";";
         connection.query(qu, function(err, result){
             if (err) {throw err};
-            console.log("result")
-            cb(result);
+            console.log(result)
+            burg(result);
         });
     },
 
     create: function(table, cols, vals, burg){
         var colst = cols.toString();
-        var qu = "INSERT INTO " + table + "(" + colst + ") VALUES (" + vals + ")";
+        var qu = "INSERT INTO " + table + " (burger_name) VALUES ('" + vals + "') ;";
 
         connection.query(qu, function(err, result) {
-            if (err) throw err;
+            if (err) {throw err};
             burg(result);
         });
     },
@@ -24,7 +24,7 @@ var orm = {
     update: function(table, vals, condition, burg){
         var qu = "UPDATE " + table + " SET " + vals + " WHERE " + condition;
         connection.query(qu, function(err, result){
-            if (err) throw err;
+            if (err) {throw err};
             burg(result);
         });
     },
@@ -33,7 +33,7 @@ var orm = {
         var qu="DELETE FROM " + table + " WHERE " + condition;
 
         connection.query(qu, function(err, result){
-            if (err) throw err;
+            if (err) {throw err};
             burg(result);
         });
     }
