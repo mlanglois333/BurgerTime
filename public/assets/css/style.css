@@ -1,0 +1,25 @@
+
+
+.header {
+    text-align: center;
+    background-color: aquamarine;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+body {
+    background-image: url(bgimg.jpg);
+}
+
+.col-6{
+    padding: 10px;
+    background-color: rgba(226, 190, 137, 0.932);
+}
+
+form{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    background-color:rgba(226, 190, 137, 0.932) ;
+  }

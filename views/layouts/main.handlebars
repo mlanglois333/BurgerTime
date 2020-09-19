@@ -5,53 +5,11 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 	<title>Burger Time!</title>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script>$(function () {
-			$(".change-devour").on("click", function () {
-				const id = $(this).data("id");
-				const newDevour = $(this).data("newdevour");
+	<script src="/assets/js/burger.js"></script>
 
-				const devoured = { devoured: newDevour };
-
-				$.ajax("/api/burgers/" + id, {
-					type: "PUT",
-					data: devoured
-				}).then(function () {
-					location.reload();
-				}
-				);
-			});
-
-			$(".create-form").on("submit", function (event) {
-				event.preventDefault();
-				const burgs = {
-					burger: $("#newBurger").val().trim(),
-					devoured: $("[name=devoured]:checked").val()
-				};
-
-				$.ajax("/api/burgers", {
-					type: "POST",
-					data: burgs
-				}).then(function () {
-					location.reload();
-				});
-			});
-
-
-			$(".delete-burger").on("click", function () {
-				const id = $(this).data("id");
-
-				$.ajax("api/burgers/" + id, {
-					type: "DELETE"
-				}).then(function () {
-					location.reload();
-				}
-				);
-			});
-		});
-		
-	</script>
 </head>
 
 <body>
