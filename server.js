@@ -17,6 +17,8 @@ const routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.listen(PORT, function () {
 
   console.log("Server listening on: http://localhost:" + PORT);
