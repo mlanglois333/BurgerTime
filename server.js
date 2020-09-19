@@ -17,7 +17,15 @@ const routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
-app.get('/favicon.ico', (req, res) => res.status(204));
+app.use( function(req, res, next) {
+
+  if (req.originalUrl && req.originalUrl.split("/").pop() === 'favicon.ico') {
+    return res.sendStatus(204);
+  }
+
+  return next();
+
+});
 
 app.listen(PORT, function () {
 
