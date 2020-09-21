@@ -7,7 +7,7 @@ router.get("/", function (req, res) {
     burger.all(function (data) {
 
         var hbsObject = { burgers: data };
-        console.log(hbsObject);
+        
         res.render("index", hbsObject);
     });
 });
@@ -19,14 +19,13 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-    console.log("controller");
+    
     var condition = "id = " + req.params.id;
     var devoured = "devoured=" + req.body.devoured;
-    console.log(condition);
+    
     burger.update(devoured, condition, function (result) {
 
-        console.log(req.body.devoured);
-        console.log(req.body.id);
+     
 
         if (result.changedRows == 0) {
             return res.status(404).end();

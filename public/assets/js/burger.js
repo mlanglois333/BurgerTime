@@ -19,7 +19,7 @@ $(function () {
             type: "PUT",
             data: burgs
         }).then(function () {
-            console.log("main ajax")
+            
             location.reload();
         }
         );
