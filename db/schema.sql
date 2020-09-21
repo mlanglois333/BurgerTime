@@ -13,7 +13,7 @@
 
 
 -- Dumping database structure for burgers_db
-CREATE DATABASE IF NOT EXISTS `burgers_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `burgers_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `burgers_db`;
 
 -- Dumping structure for table burgers_db.burgers
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `burgers` (
   `burger_name` varchar(50) DEFAULT NULL,
   `devoured` tinyint DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table burgers_db.burgers: ~3 rows (approximately)
 /*!40000 ALTER TABLE `burgers` DISABLE KEYS */;
