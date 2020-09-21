@@ -26,4 +26,5 @@ form{
    
   }
 
-  h2 { text-align: center;}
+  h2 { text-align: center;
+        color: red;}
